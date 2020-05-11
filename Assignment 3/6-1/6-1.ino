@@ -1,5 +1,4 @@
 bool last = 1 ;
-int x = 0;
 
 void setup(){
  pinMode(2, INPUT_PULLUP) ;
@@ -8,10 +7,15 @@ void setup(){
 
 void loop(){
     bool currentState = digitalRead(2);
-       
+    delay(20) ;
+
     if (last > currentState) {
-    x++ ;
-    Serial.println(x) ;
-    }
+                if (digitalRead(2) == 0) {
+        Serial.println("State FALLING with Debounce")  ; 
+        }
+    } 
+ 
     last = currentState;
-}
+    Serial.println(currentState);
+    delay(50);
+  }
