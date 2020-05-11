@@ -18,12 +18,14 @@ void loop()
     int b = pow(2,c);
     if (last > currentState)
     {
+    Serial.println("Faster X 2 (Current Speed : X"+String(c*2)+")");
     c++ ;
     tone(8,400,100);
     delay(50);
+    
     }
 
-    Serial.println("Faster X 2 (Current Speed : X"+String(c*2));
+    
     last = currentState;
     //Serial.println(b);
     //delay(300);
